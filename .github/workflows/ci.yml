@@ -25,9 +25,10 @@ jobs:
           pip install pytest
       
       - name: Lint code with Ruff
-        run: |
-          ruff check .
-      
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: check .      
+
       - name: Run tests
         run: pytest
 
